@@ -1,0 +1,18 @@
+* {
+margin: 0;
+padding: 0;
+list-style-type: none;
+outline: none;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media only print {
+html, body {
+width: 1370px !important;
+position: relative;
+background: #fff !important;
+color: #000 !important;
+overflow-y: visible !important;
+display: block !important;
+}
+}
