@@ -16,3 +16,136 @@ overflow-y: visible !important;
 display: block !important;
 }
 }
+
+html, body {
+height: 100%;
+}
+
+body {
+background: #eee;
+font-family: Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+width: 600px;
+height: 100%;
+margin: 0 auto;
+display: flex;
+align-items: center;
+}
+
+#word {
+width: calc(100% - 40px);
+padding: 20px;
+border: none;
+background: #fff;
+font-family: Arial, sans-serif;
+font-size: 2rem;
+}
+
+#word::placeholder {
+color: #ccc;
+}
+
+#main {
+width: 100%;
+height: calc(100% - 80px);
+background: #f1f1f1;
+display: none;
+}
+
+#wrapper.on {
+display: block;
+}
+
+#wrapper.on #main {
+display: block;
+}
+
+#filtered {
+width: 200px;
+height: 100%;
+background: #e6e6e6;
+display: block;
+float: left;
+overflow-y: auto;
+}
+
+#filtered li {
+padding: 10px 20px;
+word-break: break-all;
+}
+
+#result {
+width: calc(100% - 200px);
+height: 100%;
+position: relative;
+overflow-y: auto;
+display: block;
+float: left;
+}
+
+#result .word {
+padding: 20px;
+}
+
+#article {
+padding: 5px 10px;
+background: #444;
+color: #fff;
+font-size: 2rem;
+font-weight: bold;
+position: absolute;
+top: 20px;
+right: 20px;
+display: block;
+}
+
+#result h1 {
+display: inline-block;
+}
+
+#result .pronunciation {
+margin-left: 14px;
+color: #666;
+display: inline-block;
+}
+
+#result .pos {
+margin-top: 10px;
+}
+
+#result .usage {
+margin-top: 10px;
+display: block;
+}
+
+#result .example {
+margin-top: 10px;
+font-style: italic;
+display: block;
+}
+
+#result .valency,
+#result .grammat_comm {
+display: none;
+}
+
+#result .lexeme p {
+margin-top: 10px;
+}
+
+#footer {
+height: 16px;
+margin: 0 auto;
+padding: 5px 20px;
+color: #ccc;
+text-align: center;
+clear: both;
+font-size: 0.8rem;
+overflow: hidden;
+}
+
+.clr {
+clear: both;
+}
