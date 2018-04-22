@@ -38,13 +38,14 @@ left: 50%;
 }
 
 input#word {
-width: calc(100% - 40px);
+width: 560px;
 height: 40px;
 padding: 20px;
 border: none;
 background: #fff;
 font-family: Arial, sans-serif;
 font-size: 2rem;
+position: fixed;
 }
 
 #word::placeholder {
@@ -52,10 +53,12 @@ color: #ccc;
 }
 
 #main {
-width: 100%;
+width: 600px;
 height: calc(100% - 80px);
 background: #f6f6f6;
 display: none;
+position: fixed;
+top: 80px;
 }
 
 #wrapper.on {
@@ -73,6 +76,7 @@ background: #e6e6e6;
 display: block;
 float: left;
 overflow-y: auto;
+-webkit-overflow-scrolling: touch;
 }
 
 #filtered li {
@@ -93,10 +97,11 @@ background: #d3d3d3;
 width: calc(100% - 200px);
 height: 100%;
 position: relative;
-overflow-y: auto;
 display: block;
 float: left;
 line-height: 1.2rem;
+overflow-y: auto;
+-webkit-overflow-scrolling: touch;
 }
 
 #result .word {
