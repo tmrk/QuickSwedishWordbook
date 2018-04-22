@@ -29,9 +29,12 @@ font-family: Helvetica, Arial, sans-serif;
 #wrapper {
 width: 600px;
 height: 100%;
-margin: 0 auto;
+margin-left: -300px;
 display: flex;
 align-items: center;
+position: fixed;
+top: 0;
+left: 50%;
 }
 
 #word {
