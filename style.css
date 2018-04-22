@@ -50,7 +50,7 @@ color: #ccc;
 #main {
 width: 100%;
 height: calc(100% - 80px);
-background: #f1f1f1;
+background: #f6f6f6;
 display: none;
 }
 
@@ -74,6 +74,15 @@ overflow-y: auto;
 #filtered li {
 padding: 10px 20px;
 word-break: break-all;
+cursor: pointer;
+}
+
+#filtered li:hover {
+background: #ddd;
+}
+
+#filtered li.selected {
+background: #d3d3d3;
 }
 
 #result {
@@ -83,10 +92,15 @@ position: relative;
 overflow-y: auto;
 display: block;
 float: left;
+line-height: 1.2rem;
 }
 
 #result .word {
 padding: 20px;
+}
+
+#result h1 sup {
+font-weight: normal;
 }
 
 #article {
@@ -122,6 +136,7 @@ display: block;
 
 #result .example {
 margin-top: 10px;
+font-size: 0.9rem;
 font-style: italic;
 display: block;
 }
