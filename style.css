@@ -26,47 +26,181 @@ background: #eee;
 font-family: Helvetica, Arial, sans-serif;
 }
 
+a {
+color: #ccc;
+}
+
+a:hover {
+color: #aaa;
+text-decoration: none;
+}
+
 #wrapper {
 width: 600px;
 height: 100%;
-margin-left: -300px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-content: center;
+align-items: center;
+}
+
+#header {
+height: 100px;
+}
+
+#footer {
+height: 100px;
+}
+
+#header,
+#footer {
+width: 100%;
+height: 150px;
+color: #ccc;
+text-align: center;
 display: flex;
 align-items: center;
-position: fixed;
-top: 0;
-left: 50%;
+align-content: center;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+#header h1 {
+text-transform: uppercase;
+font-size: 1.8rem;
+}
+
+#footer {
+font-size: 0.8rem;
+}
+
+#footer span {
+width: 100%;
+margin-bottom: 10px;
+}
+
+#footer a svg {
+margin: 0 2px;
+display: inline-block;
+}
+
+#footer a svg path {
+fill: #ccc;
+}
+
+#footer a:hover svg path {
+fill: #aaa;
+}
+
+#search {
+width: 100%;
+position: relative;
 }
 
 input#word {
-width: 560px;
+width: calc(100% - 200px);
 height: 40px;
-padding: 20px;
+padding: 20px 180px 20px 20px;
 border: none;
 background: #fff;
 font-family: Arial, sans-serif;
 font-size: 2rem;
-position: fixed;
 }
 
 #word::placeholder {
 color: #ccc;
 }
 
+#wrapper.on #word {
+width: calc(100% - 265px);
+padding-right: 245px;
+}
+
+#insertchars {
+padding: 20px 0;
+position: absolute;
+top: 0;
+right: 20px;
+}
+
+#wrapper.on #insertchars {
+right: 85px;
+}
+
+#insertchars>span {
+width: 38px;
+height: 38px;
+margin: 0 5px;
+border: 1px solid #ddd;
+border-radius: 5px;
+background: #fff;
+color: #ddd;
+display: inline-block;
+text-align: center;
+font-size: 1.6rem;
+line-height: 38px;
+cursor: pointer;
+}
+
+#insertchars>span:hover {
+background: #f6f6f6;
+color: #aaa;
+border-color: #aaa;
+}
+
+#clear {
+width: 80px;
+height: 100%;
+position: absolute;
+top: 0;
+right: 0;
+background: url(data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2236%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2236%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012z%22/%3E%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22/%3E%3C/svg%3E) center no-repeat;
+cursor: pointer;
+display: none;
+}
+
+#clear:hover {
+background-color: #f1f1f1;
+color: #aaa;
+}
+
 #main {
-width: 600px;
+width: 100%;
 height: calc(100% - 80px);
 background: #f6f6f6;
 display: none;
-position: fixed;
-top: 80px;
+}
+
+#main.noresult #filtered,
+#main.noresult #result {
+display: none;
+}
+
+#main.noresult::after {
+width: 100%;
+padding: 80px 0;
+content: 'No entries found.';
+text-align: center;
+display: block;
+font-size: 3rem;
+font-weight: 400;
+letter-spacing: 2px;
+color: rgba(0,0,0,0.1);
 }
 
 #wrapper.on {
 display: block;
 }
 
-#wrapper.on #main {
+#wrapper.on #main,
+#wrapper.on #clear {
 display: block;
+}
+
+#wrapper.on #header,
+#wrapper.on #footer {
+display: none;
 }
 
 #filtered {
@@ -124,6 +258,10 @@ right: 20px;
 display: block;
 }
 
+#result .word>span {
+display: block;
+}
+
 #result h1 {
 display: inline-block;
 }
@@ -136,6 +274,12 @@ display: inline-block;
 
 #result .pos {
 margin-top: 10px;
+display: block;
+display: inline-block;
+}
+
+#result .inflection {
+display: inline-block;
 }
 
 #result .usage {
@@ -157,17 +301,6 @@ display: none;
 
 #result .lexeme p {
 margin-top: 10px;
-}
-
-#footer {
-height: 16px;
-margin: 0 auto;
-padding: 5px 20px;
-color: #ccc;
-text-align: center;
-clear: both;
-font-size: 0.8rem;
-overflow: hidden;
 }
 
 .clr {
