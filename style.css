@@ -264,6 +264,7 @@ display: block;
 
 #result h1 {
 display: inline-block;
+line-height: 1.1em;
 }
 
 #result .pronunciation {

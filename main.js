@@ -179,7 +179,7 @@ fetch('lexin.json').then(function(response) {
                 if (selected.nextSibling) {
                     selected.classList.remove('selected');
                     selected.nextSibling.classList.add('selected');
-                    if (selected.nextSibling.getBoundingClientRect().bottom - filtered.getBoundingClientRect().height - 80 >= 0) filtered.scrollTop = selected.nextSibling.offsetTop - filtered.getBoundingClientRect().height - selected.nextSibling.getBoundingClientRect().height - 5;
+                    if (selected.nextSibling.getBoundingClientRect().bottom - filtered.getBoundingClientRect().height - 80 >= 0) filtered.scrollTop = selected.nextSibling.offsetTop - filtered.getBoundingClientRect().height - selected.nextSibling.getBoundingClientRect().height - 7;
                     showWord(findWord(selected.nextSibling.innerHTML));
                 }
                 break;
