@@ -6,15 +6,9 @@ outline: none;
 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-@media only print {
-html, body {
-width: 1370px !important;
-position: relative;
-background: #fff !important;
-color: #000 !important;
-overflow-y: visible !important;
-display: block !important;
-}
+html {
+-ms-touch-action: manipulation;
+touch-action: manipulation;
 }
 
 html, body {
@@ -77,7 +71,7 @@ font-size: 0.8rem;
 
 #footer span {
 width: 100%;
-margin-bottom: 10px;
+margin-top: 10px;
 }
 
 #footer a svg {

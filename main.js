@@ -21,11 +21,6 @@ function t(tag, content, listener) {
     return el;
 }
 
-function appendChildren(parent, children) {
-    for (var i = 0; i < children.length; i++)
-        parent.appendChild(children[i]);
-}
-
 fetch('lexin.json').then(function(response) {
     return response.json();
 }).then(function(words) {
@@ -101,7 +96,7 @@ fetch('lexin.json').then(function(response) {
         t('div#wrapper', [
             t('div#header', t('h1', 'Quick Swedish Wordbook')),
             t('div#search', [
-                t('input#word|placeholder=Type a word to look up|autofocus=autofocus', '', {'input': function() {
+                t('input#word|placeholder=Type a word to look up|autofocus=autofocus|autocomplete=off', '', {'input': function() {
                     var main = document.getElementById('main')
                         filtered = document.getElementById('filtered'),
                         result = document.getElementById('result');
@@ -163,8 +158,8 @@ fetch('lexin.json').then(function(response) {
                 t('div#result')
             ]),
             t('div#footer', [
-                t('span', 'QSW is based on <a xmlns:dct="http://purl.org/dc/terms/" href="https://spraakbanken.gu.se/resource/lexin" rel="dct:source">LEXIN Second Edition</a> by the University of Gothenburg (2011)'),
-                t('a#cclicense|rel=license|href=https://creativecommons.org/licenses/by-sa/4.0/|title=Creative Commons License BY-SA 4.0', '')
+                t('a#cclicense|rel=license|href=https://creativecommons.org/licenses/by-sa/4.0/|title=Creative Commons License BY-SA 4.0', ''),
+                t('span', 'Quick Swedish Wordbook (2018) is based on <a xmlns:dct="http://purl.org/dc/terms/" href="https://spraakbanken.gu.se/resource/lexin" rel="dct:source">LEXIN Second Edition</a>')
             ])
         ])
     );
