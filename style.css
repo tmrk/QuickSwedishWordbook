@@ -24,7 +24,8 @@ a {
 color: #ccc;
 }
 
-a:hover {
+.notouch a:hover,
+.touch a:active {
 color: #aaa;
 text-decoration: none;
 }
@@ -83,7 +84,8 @@ display: inline-block;
 fill: #ccc;
 }
 
-#footer a:hover svg path {
+.notouch #footer a:hover svg path,
+.touch #footer a:focus svg path {
 fill: #aaa;
 }
 
@@ -137,7 +139,8 @@ line-height: 38px;
 cursor: pointer;
 }
 
-#insertchars>span:hover {
+.notouch #insertchars>span:hover,
+.touch #insertchars>span:focus {
 background: #f6f6f6;
 color: #aaa;
 border-color: #aaa;
@@ -154,7 +157,8 @@ cursor: pointer;
 display: none;
 }
 
-#clear:hover {
+.notouch #clear:hover,
+.touch #clear:focus {
 background-color: #f1f1f1;
 color: #aaa;
 }
@@ -213,7 +217,8 @@ word-break: break-all;
 cursor: pointer;
 }
 
-#filtered li:hover {
+.notouch #filtered li:hover,
+.touch #filtered li:active {
 background: #ddd;
 }
 
