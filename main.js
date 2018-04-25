@@ -196,6 +196,5 @@ fetch('lexin.json').then(function(response) {
                 break;
         }
     })
-}).then(function() {
     document.body.removeChild(document.getElementById('loading'));
 })
