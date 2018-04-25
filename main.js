@@ -1,5 +1,24 @@
 'use strict';
 
+var CACHE_NAME = 'qsw-cache';
+var urlsToCache = [
+  '/',
+  '/index.html',
+  '/lexin.json',
+  '/style.css'
+];
+
+self.addEventListener('install', function(event) {
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
+});
+
 // Tag generator, syntax: t('tag#id.class|attribute=value', content/[content], {'event': function() {...})
 function t(tag, content, listener) {
     var el = document.createElement(tag.split('#')[0].split('.')[0].split('|').shift());
