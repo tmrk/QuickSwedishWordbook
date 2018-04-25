@@ -241,8 +241,18 @@ overflow-y: auto;
 padding: 20px;
 }
 
+#result h1 {
+display: inline-block;
+line-height: 1.1em;
+}
+
 #result h1 sup {
 font-weight: normal;
+}
+
+#result .word>span {
+display: block;
+position: relative;
 }
 
 #result .article {
@@ -253,18 +263,9 @@ font-size: 2rem;
 font-weight: bold;
 line-height: 2rem;
 position: absolute;
-top: 15px;
-right: 15px;
+top: 0;
+right: 0;
 display: block;
-}
-
-#result .word>span {
-display: block;
-}
-
-#result h1 {
-display: inline-block;
-line-height: 1.1em;
 }
 
 #result .pronunciation {
