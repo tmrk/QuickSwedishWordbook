@@ -2,7 +2,6 @@
 
 var CACHE_NAME = 'qsw-cache';
 var urlsToCache = [
-  '/',
   '/index.html',
   '/lexin.json',
   '/style.css'
