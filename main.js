@@ -72,7 +72,7 @@ fetch('lexin.json').then(function(response) {
                     pos = word.pos ? t('span.pos', word.pos) : '',
                     inflection = word.inflection ? t('span.inflection', '&nbsp;(' + word.inflection + ')') : '',
                     lexeme = t('div.lexeme'),
-                    article = getArticle(word) ? t('span.article', getArticle(word)) : undefined;
+                    article = getArticle(word) ? t('span.article', getArticle(word)) : '';
                 if (word.lexeme) {
                     for (var ii = 0; ii < word.lexeme.length; ii++) {
                         var lex = word.lexeme[ii] ? word.lexeme[ii] : {},
@@ -95,7 +95,7 @@ fetch('lexin.json').then(function(response) {
     }
 
     function getArticle(word) {
-        return word.pos !== 'subst.' ? undefined
+        return word.pos !== 'subst.' ? ''
                 : word.inflection.split(' ')[0].slice(-1)[0] == 'n' ? 'en'
                 : 'ett';
     }

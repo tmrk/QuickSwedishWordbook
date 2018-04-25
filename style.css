@@ -247,13 +247,14 @@ font-weight: normal;
 
 #result .article {
 padding: 5px 10px;
-background: #444;
-color: #fff;
+border: 1px solid #000;
+border-radius: 10px;
 font-size: 2rem;
 font-weight: bold;
+line-height: 2rem;
 position: absolute;
-top: 20px;
-right: 20px;
+top: 15px;
+right: 15px;
 display: block;
 }
 
