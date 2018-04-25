@@ -125,7 +125,7 @@ fetch('lexin.json').then(function(response) {
             t('div#header', t('h1', 'Quick Swedish Wordbook')),
             t('div#search', [
                 t('input#word|placeholder=Type a word to look up|autofocus=autofocus|autocomplete=off', '', {'input': function() {
-                    var main = document.getElementById('main')
+                    var main = document.getElementById('main'),
                         filtered = document.getElementById('filtered'),
                         result = document.getElementById('result');
                     filtered.innerHTML = '';
